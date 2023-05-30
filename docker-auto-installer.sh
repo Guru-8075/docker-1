@@ -26,3 +26,9 @@ apt-get install -y docker-ce
 
 apt-get update
 apt-get install docker-compose-plugin
+
+# majes non-root user
+sudo groupadd docker
+sudo usermod -aG docker xxx
+newgrp docker # no reboot to take effect
+sudo service docker restart
